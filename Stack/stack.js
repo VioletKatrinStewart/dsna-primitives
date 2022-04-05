@@ -24,7 +24,7 @@ class Stack {
   }
 
   hasNext() {
-    return this.length > 0;
+    return !!this.length;
   }
 }
 

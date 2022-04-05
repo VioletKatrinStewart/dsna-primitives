@@ -20,7 +20,7 @@ class Queue {
   }
 
   hasNext() {
-    return this.length > 0;
+    return !!this.length;
   }
 
   isEmpty() {
