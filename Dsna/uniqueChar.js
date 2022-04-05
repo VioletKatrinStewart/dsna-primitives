@@ -6,7 +6,7 @@ function uniqueChar(string) {
     const next = chars[i + 1];
     if (current === prev && current === next) return current;
   }
-  return ' ';
+  return '_';
 }
 
 console.log(uniqueChar('abdacabad'));
