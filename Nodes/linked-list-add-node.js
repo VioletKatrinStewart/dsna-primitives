@@ -24,6 +24,18 @@ class LinkedListNode {
       return `${this.value} ${this.next.getList()}`;
     }
   }
+
+  delete(node) {
+    //is this the node to remove? if so return so that it is next
+    //so that can be the new next of the caller
+    if (this === node) return this.next;
+    //no more nodes? return undefined to signal not found
+    if (!this.next) return;
+    //get the new next node
+    const newNext = this.next.remove(node);
+    //assign it if provided
+    if (newNext !== undefined) this.next = newNext;
+  }
 }
 
 const root = new LinkedListNode('A');
