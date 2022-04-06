@@ -74,3 +74,5 @@ tree.add(human2);
 tree.add(human3);
 console.log(tree.findPerson('human 4'));
 console.log(tree.findPerson('human 3'));
+
+console.log(BinaryTreeNode);
