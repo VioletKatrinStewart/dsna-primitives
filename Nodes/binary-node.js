@@ -20,7 +20,22 @@ class BinaryTreeNode {
       this.right.add(node);
     }
   }
+
+  findPerson(name) {
+    if (this.value === name) return this.value;
+    //if name matches the value in this node, return this value
+    else if (this.left)
+      return this.left.findPerson(name); //else check left tree for name
+    else if (this.right)
+      return this.right.findPerson(name); //else check right tree for name
+    else return null; //if name cannot be found, return null
+  }
 }
+
+const human0 = { name: 'human 0' };
+const human1 = { name: 'human 1' };
+const human2 = { name: 'human 2' };
+const human3 = { name: 'human 3' };
 
 const B = new BinaryTreeNode('B');
 const A = new BinaryTreeNode('A');
@@ -30,3 +45,8 @@ const D = new BinaryTreeNode('D');
 B.add(A);
 B.add(D);
 B.add(C);
+const tree = new BinaryTreeNode(human0);
+console.log(tree.findPerson('human 0'));
+console.log(tree.findPerson('human 1'));
+console.log(tree.findPerson('human 2'));
+console.log(tree.findPerson)('human 3');
